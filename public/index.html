@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0d0d" />
+
+  <title>Visual ASMR — Satisfying Interactive Art</title>
+  <meta name="description" content="Tap and drag to fracture, stretch, destroy, and ripple. Pure visual ASMR — no text, no language, just beautiful physics." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Visual ASMR — Satisfying Interactive Art" />
+  <meta property="og:description" content="Tap to shatter polygons, stretch slime, smash blocks, and make waves. Works on any device." />
+  <meta property="og:image"       content="/og-preview.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Visual ASMR — Satisfying Interactive Art" />
+  <meta name="twitter:description" content="Pure interactive visual satisfaction. No text, no language barriers." />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://visual-asmr.vercel.app/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Visual ASMR",
+    "description": "Interactive visual ASMR toy — fracture, slime, destroy, ripple",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=__ADSENSE_CLIENT__"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 상단 광고 배너 (CLS 방지 고정 높이) -->
+  <div class="ad-banner-top" id="ad-top" aria-hidden="true">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="__ADSENSE_CLIENT__"
+         data-ad-slot="__SLOT_TOP__"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 메인 캔버스 -->
+  <canvas id="main-canvas" aria-label="Interactive visual ASMR canvas"></canvas>
+
+  <!-- 음향 유도 토스트 (첫 클릭 후 표시) -->
+  <div id="sound-toast" class="sound-toast" hidden role="alert" aria-live="polite">
+    🔇 → 🔊 tap for sound
+  </div>
+
+  <!-- 하단 모드 전환 nav -->
+  <nav class="mode-bar" role="navigation" aria-label="Mode selector">
+    <button data-mode="ripple"   class="active" aria-label="Ripple — tap to make waves">🌊</button>
+    <button data-mode="fracture" aria-label="Fracture — tap to shatter crystals">💎</button>
+    <button data-mode="slime"    aria-label="Slime — drag to stretch jelly">🫧</button>
+    <button data-mode="destroy"  aria-label="Destroy — smash stacked blocks">🧱</button>
+    <button id="sound-toggle"    aria-label="Toggle sound">🔇</button>
+  </nav>
+
+  <!-- 모드 전환 인터스티셜 광고 -->
+  <div class="ad-interstitial" id="ad-inter" hidden aria-hidden="true" role="dialog" aria-label="Advertisement">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="__ADSENSE_CLIENT__"
+         data-ad-slot="__SLOT_INTER__"
+         data-ad-format="auto"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <button class="ad-skip" id="ad-skip" aria-label="Skip advertisement">✕</button>
+  </div>
+
+  <!-- 5분 체류 보너스 배너 -->
+  <div class="ad-bonus" id="ad-bonus" hidden aria-hidden="true">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="__ADSENSE_CLIENT__"
+         data-ad-slot="__SLOT_BONUS__"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

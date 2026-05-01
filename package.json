@@ -1,0 +1,20 @@
+{
+  "name": "visual-asmr",
+  "version": "1.0.0",
+  "description": "Interactive visual ASMR & geometry toy — no text, pure satisfying visuals",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
+    "lint": "eslint src/**/*.js tests/**/*.js",
+    "dev": "npx serve public"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
